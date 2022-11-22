@@ -1,16 +1,17 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+import * as path from 'path';
+import * as lambda from 'aws-cdk-lib/aws-lambda-nodejs';
+
 
 export class MeetjsLublin11FirstLambdaStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
-
-    // example resource
-    // const queue = new sqs.Queue(this, 'MeetjsLublin11FirstLambdaQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    // Lambda Definition
+    const mdyFirstLambdaFunction = new lambda.NodejsFunction(this, 'my-first-lambda-function', {
+      handler: 'handler',
+      entry: path.join(__dirname, '/functions/my_first_lambda/main.ts'),
+    });
   }
 }
