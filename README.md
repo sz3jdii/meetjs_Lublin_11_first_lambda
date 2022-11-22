@@ -1,4 +1,4 @@
-# Welcome to your CDK TypeScript project
+# Meet.JS Lublin 11 First Lambda (2022-12-02)
 
 This is a blank project for CDK development with TypeScript.
 
